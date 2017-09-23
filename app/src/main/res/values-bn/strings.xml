@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lab1</string>
-    <string name="hello_message">Bengali Hello!</string>
-    <string name="ButtonText">I\'m a button</string>
+    <string name="app_name">ল্যাব 2</string>
+    <string name="hello_message">হ্যালো !</string>
+    <string name="ButtonText">আমি একটি বোতাম।</string>
+    <string name="login_message">লগইন</string>
+    <string name="password_message">পাসওয়ার্ড</string>
+    <string name="RadioButton">রেডিও বোতাম</string>
+    <string name="What_does_it_do">এটার কাজ কি?</string>
+    <string name="CheckBox_message">চেকবক্সটি</string>
+    <string name="image_to_display">চিত্র প্রদর্শনের জন্য</string>
+    <string name="login_name">লগইন নাম</string>
+
 </resources>
