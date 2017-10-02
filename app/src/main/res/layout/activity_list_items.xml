@@ -9,25 +9,31 @@
     android:text="@string/RadioButton"
     android:layout_gravity="fill_horizontal"
     />
-    <CheckBox android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill_horizontal"
-        android:text="@string/CheckBox_message"/>
 
-
-    <Switch android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_columnWeight="1"
-        android:layout_gravity="fill_horizontal"
-    android:text="@string/What_does_it_do"/>
-
-    <ImageButton
+    <CheckBox
+        android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_gravity="fill_horizontal"
+        android:text="@string/CheckBox_message" />
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:text="@string/What_does_it_do" />
+
+    <ImageButton
+        android:id="@+id/image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill_horizontal"
+        android:contentDescription="@string/What_does_it_do"
         android:src="@android:drawable/ic_menu_camera"
-        android:text="@string/image_to_display"
-        android:contentDescription="@string/What_does_it_do"/>
+        android:text="@string/image_to_display" />
 </GridLayout>
