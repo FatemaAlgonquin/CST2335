@@ -28,10 +28,7 @@ public class LoginActivity extends Activity {
 
         passwordMsg = (EditText) findViewById(R.id.editText2);
         msgButton = (Button)findViewById(R.id.button2);
-
         setupMessageButton();
-
-
     }
     protected void onSaveInstanceState(Bundle outState)
     {
@@ -83,20 +80,12 @@ public class LoginActivity extends Activity {
     }
 
     public void saveInfo(View v){
-        //SharedPreferences sharedPref = getSharedPreferences("FileName",MODE_PRIVATE);
-        //SharedPreferences.Editor prefEditor = sharedPref.edit();
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String mapTypeString = preferences.getString("DefaultEmail", "email@domain.com");
-
-        //prefEditor.putString("userPass",passwordMsg.getText().toString());
-        //prefEditor.apply();
-        //commit();
-
-
         Toast.makeText(this,"saved",Toast.LENGTH_LONG).show();
         Intent intent = new Intent(LoginActivity.this, StartActivity.class);
         startActivity(intent);
-
 
     }
 
