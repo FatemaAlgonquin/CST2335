@@ -73,28 +73,30 @@ public class StartActivity extends Activity {
     }
 
     public void onActivityResult(int requestCode, int responseCode, Intent data){
-        if(requestCode == 10 ){
-            if(responseCode == Activity.RESULT_OK){
-                Log.i(TAG, "Returned to StartActivity.onActivityResult");
-                String messagePassed = data.getStringExtra("Response");
-                Toast.makeText(this,"my information to share",Toast.LENGTH_LONG).show();
-            }
-            }
+        if(requestCode == 10 ) {
+            Log.i(TAG, "Returned to StartActivity.onActivityResult");
+        }
+        if(responseCode == Activity.RESULT_OK){
+
+            String messagePassed = data.getStringExtra("Response");
+            Toast.makeText(getApplicationContext(),"my information to share" ,Toast.LENGTH_LONG).show();
+        }
     }
+
 
     public void onClickStartChat(){
         startChat = (Button)findViewById(R.id.buttonChat);
-        startChat.setPadding(0,100,0,0);
+        //startChat.setPadding(0,100,0,0);
 
         startChat.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){
                 Log.i(TAG, "User clicked Start Chat");
-                Intent intent = new Intent(StartActivity.this, ChatWindow.class);
-                //startActivity(intent);
-                startActivityForResult(intent, 10);
-                onActivityResult(10,10, intent);
+                //Intent intent = new Intent(StartActivity.this, ChatWindow.class);
+                Intent intent = new Intent(getApplicationContext(), ChatWindow.class);
+                startActivity(intent);
+
             }
         });
     }
