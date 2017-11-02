@@ -12,6 +12,7 @@ public class StartActivity extends Activity {
     String TAG = "activity_start.xml";
     Button startButton;
     Button startChat;
+    Button weatherButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class StartActivity extends Activity {
         startButton.setPadding(0,0,0,100);
         buttonClickAction();
         onClickStartChat();
+        onClickWeather();
     }
 
     protected void onSaveInstanceState(Bundle outState)
@@ -100,6 +102,19 @@ public class StartActivity extends Activity {
             }
         });
     }
+
+    public void onClickWeather(){
+        weatherButton = (Button)findViewById(R.id.button_Weather_forecast);
+        weatherButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(), WeatherForecast.class);
+                startActivity(intent);
+            }
+         }
+        );
+    }
+
 
 
 }

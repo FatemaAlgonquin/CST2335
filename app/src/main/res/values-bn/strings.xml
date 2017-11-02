@@ -10,5 +10,6 @@
     <string name="CheckBox_message">চেকবক্সটি</string>
     <string name="image_to_display">চিত্র প্রদর্শনের জন্য</string>
     <string name="login_name">লগইন নাম</string>
+    <string name="weather_forecast">আবহাওয়া</string>
 
 </resources>
