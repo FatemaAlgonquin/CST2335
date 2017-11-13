@@ -10,30 +10,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_message"
+        android:textSize="18sp"
         android:id="@+id/textView" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/ButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/buttonStart"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
-        android:onClick=""/>
+        android:layout_marginTop="8dp"
+        />
 
     <Button
         android:text="@string/button_chat"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonChat"
         android:layout_below="@+id/buttonStart"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"/>
 
 
     <Button
         android:id="@+id/button_Weather_forecast"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/weather_forecast"

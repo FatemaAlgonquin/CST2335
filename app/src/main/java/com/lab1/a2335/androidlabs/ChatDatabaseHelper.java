@@ -15,7 +15,7 @@ import android.util.Log;
 public class ChatDatabaseHelper extends SQLiteOpenHelper {
 
     public static String TAG = ChatDatabaseHelper.class.getSimpleName();
-    private static final String DATABASE_NAME = "Messages.db";
+    private static final String DATABASE_NAME = "Messages1.db";
     private static final int DATABASE_VERSION = 1;
     public static final String CHAT_TABLE = "CHAT_TABLE";
     private final Context mctx;
@@ -30,7 +30,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
             KEY_MESSAGE
     };
 
-    // creting the table chat_table
+    // creating the table chat_table
     private static final String CREATE_TABLE_CHAT =
             "create table " + CHAT_TABLE + " ( " + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + KEY_MESSAGE + " text" + "); ";
@@ -41,13 +41,6 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
         this.mctx = context;
     }
 
-    /*
-    public SQLiteDatabase getMdb(){
-        if(mdb == null){
-            mdb = getWritableDatabase();
-        }
-        return mdb;
-    }*/
 
 
     // only creating the table
@@ -81,13 +74,19 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     }
 
     // retrieving data
-    public Cursor getChatMssages(){
+    public Cursor getChatMessages(){
         return mdb.query(CHAT_TABLE, CHAT_FIELDS, null, null, null, null, null);
     }
 
-    public String getMeessageFromCursor(Cursor cursor){
+    public String getMessageFromCursor(Cursor cursor){
         String msg = cursor.getString(cursor.getColumnIndex(KEY_MESSAGE));
         return msg;
+
+    }
+
+    public int getIdFromCursor(Cursor cursor){
+        int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
+        return id;
 
     }
 
@@ -95,5 +94,22 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
         mdb.insert(CHAT_TABLE, null, content);
 
     }
+
+    public void remove(long id){
+        //String s_id;
+        //s_id = String.valueOf(id);
+       // mdb.execSQL("DELETE FROM "  + CHAT_TABLE  + " WHERE _id = " + id);
+        //mdb.delete(CHAT_TABLE, KEY_ID, +" = ?", new String[] { s_id });
+
+
+        //mdb.execSQL("DELETE FROM " + CHAT_TABLE + " WHERE " + KEY_ID + "= " + id);
+
+       int deletedRecrod =  mdb.delete(CHAT_TABLE, "_id" + "=" + id, null);
+        Log.i("Deleted ",Integer.toString(deletedRecrod));
+    }
+
+
+
+
 
 }

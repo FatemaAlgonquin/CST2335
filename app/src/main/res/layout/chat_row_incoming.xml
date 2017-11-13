@@ -12,7 +12,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/messageText"
         android:layout_weight="1"
-        android:gravity="right"/>
+        android:gravity="right"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dip"/>
 
     <ImageView
         android:id="@+id/imageView"
