@@ -77,6 +77,8 @@ public class ChatWindow extends Activity {
         newValues = new ContentValues();
         chatHelper.open();
         cursor = chatHelper.getChatMessages();
+
+        //if (result != null && result.moveToFirst());
         if(cursor.moveToFirst()){
             do{
                 String msg = chatHelper.getMessageFromCursor(cursor);
@@ -104,6 +106,7 @@ public class ChatWindow extends Activity {
                 editTxt.setText("");
                 newValues.put("message" , chatString);
                 chatHelper.insert(newValues);
+                cursor = chatHelper.getChatMessages();
             }
         });
 
@@ -113,7 +116,7 @@ public class ChatWindow extends Activity {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = chatAdapter.getItem(position);
-                String  str = (String)o; //As you are using Default String Adapter
+                String  str = (String)o; //Default String Adapter
 
                 Toast.makeText(getBaseContext(),str,Toast.LENGTH_SHORT).show();
 
@@ -148,6 +151,8 @@ public class ChatWindow extends Activity {
 
     }
 
+
+
     public void onActivityResult(int requestCode, int responseCode, Intent data){
         if(requestCode == 10  && responseCode == 10) {
             // received data from fragment to delete the message
@@ -157,9 +162,10 @@ public class ChatWindow extends Activity {
             deleteBDid = chatAdapter.getItemId(deleteId);
             chatHelper.remove(deleteBDid);
             chatList.remove(deleteId);
+            cursor = chatHelper.getChatMessages();
             chatAdapter.notifyDataSetChanged();
             //deleteMessage(deleteId);
-            Log.i(String.valueOf(ChatWindow.this), String.valueOf(chatList.size()));
+            //Log.i(String.valueOf(ChatWindow.this), String.valueOf(chatList.size()));
         }
     }
 
