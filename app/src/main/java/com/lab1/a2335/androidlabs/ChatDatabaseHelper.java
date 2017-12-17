@@ -16,7 +16,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
 
     public static String TAG = ChatDatabaseHelper.class.getSimpleName();
     private static final String DATABASE_NAME = "Messages1.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     public static final String CHAT_TABLE = "CHAT_TABLE";
     private final Context mctx;
     SQLiteDatabase mdb;
