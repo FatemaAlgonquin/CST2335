@@ -83,6 +83,7 @@ public class TestToolbar extends AppCompatActivity {
             case R.id.action_three:
                 Log.i("Toolbar", "Option3 is selected");
                 LayoutInflater inflater = this.getLayoutInflater();
+                //inflating the layout that contains custom message
                 View view = inflater.inflate(R.layout.layout_to_signin,null);
                 final EditText customText = (EditText) view.findViewById(R.id.customMsg);
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(TestToolbar.this);
